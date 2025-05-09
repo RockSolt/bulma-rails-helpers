@@ -2,7 +2,7 @@ require_relative "lib/bulma/rails/helpers/version"
 
 Gem::Specification.new do |spec|
   spec.name        = "bulma-rails-helpers"
-  spec.version     = Bulma::Rails::Helpers::VERSION
+  spec.version     = Bulma::VERSION
   spec.authors     = [ "Todd Kummer" ]
   spec.email       = [ "todd@rockridgesolutions.com" ]
   spec.homepage    = "TODO"
@@ -18,9 +18,8 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
   spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
 
-  spec.files = Dir.chdir(File.expand_path(__dir__)) do
-    Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
-  end
+  spec.files = Dir["lib/**/*", "app/**/*"]
+  spec.require_paths = [ "lib" ]
 
   spec.add_dependency "rails", ">= 8.0.2"
 end
