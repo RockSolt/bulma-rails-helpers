@@ -1,4 +1,4 @@
-require_relative "lib/bulma/rails/helpers/version"
+require_relative "lib/bulma/version"
 
 Gem::Specification.new do |spec|
   spec.name        = "bulma-rails-helpers"
