@@ -21,4 +21,6 @@ Gem::Specification.new do |spec|
   spec.files = Dir["lib/**/*", "app/**/*", "config/importmap.rb"]
 
   spec.add_dependency "rails", ">= 8.0.2"
+
+  spec.add_development_dependency "minitest-difftastic"
 end

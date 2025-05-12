@@ -87,6 +87,16 @@ GEM
     connection_pool (2.5.3)
     crass (1.0.6)
     date (3.4.1)
+    difftastic (0.6.0)
+      pretty_please
+    difftastic (0.6.0-arm64-darwin)
+      pretty_please
+    difftastic (0.6.0-x86_64-darwin)
+      pretty_please
+    difftastic (0.6.0-x86_64-linux)
+      pretty_please
+    dispersion (0.2.0)
+      prism
     drb (2.2.1)
     erubi (1.13.1)
     globalid (1.2.1)
@@ -113,6 +123,8 @@ GEM
     marcel (1.0.4)
     mini_mime (1.1.5)
     minitest (5.25.5)
+    minitest-difftastic (0.2.1)
+      difftastic (~> 0.6)
     net-imap (0.5.8)
       date
       net-protocol
@@ -145,6 +157,8 @@ GEM
       racc
     pp (0.6.2)
       prettyprint
+    pretty_please (0.2.0)
+      dispersion (~> 0.2)
     prettyprint (0.2.0)
     prism (1.4.0)
     propshaft (1.1.0)
@@ -260,6 +274,7 @@ PLATFORMS
 
 DEPENDENCIES
   bulma-rails-helpers!
+  minitest-difftastic
   propshaft
   puma
   rubocop-rails-omakase
