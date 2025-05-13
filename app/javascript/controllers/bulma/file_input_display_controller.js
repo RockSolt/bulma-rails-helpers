@@ -3,11 +3,11 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["fileInput", "fileList"]
 
-  // TODO: Use a value for the file types, then document it with the `file_field` helper
-  static ACCEPTED_FILE_TYPES = ["ofx", "qfx"]
+  acceptValues = []
 
   connect() {
     this.show()
+    this.#parseAcceptAttribute()
   }
 
   show() {
@@ -46,13 +46,37 @@ export default class extends Controller {
   }
 
   #validFileType(file) {
-    const parts = file.name.split('.')
-    const extension = parts[parts.length - 1].toLowerCase()
+    // If no accept attribute is specified, accept all files
+    if (this.acceptValues.length === 0) {
+      return true
+    }
 
-    return this.constructor.ACCEPTED_FILE_TYPES.includes(extension)
+    const fileExtension = `.${file.name.split('.').pop().toLowerCase()}`
+    const fileMimeType = file.type.toLowerCase()
+
+    // Check if the file matches any of the accept criteria
+    return this.acceptValues.some(acceptValue => {
+      if (acceptValue.startsWith('.')) {
+        // Check file extension (e.g. ".jpg")
+        return acceptValue.toLowerCase() === fileExtension
+      } else if (acceptValue.includes('/*')) {
+        // Check MIME type with wildcard (e.g. "image/*")
+        const acceptGroup = acceptValue.split('/')[0]
+        return fileMimeType.startsWith(`${acceptGroup}/`)
+      } else {
+        // Check specific MIME type (e.g. "image/jpeg")
+        return acceptValue === fileMimeType
+      }
+    })
   }
 
   #fileInfo(file) {
     return `${file.name} (${file.size} bytes)`
+  }
+
+  #parseAcceptAttribute() {
+    if (this.fileInputTarget.accept) {
+      this.acceptValues = this.fileInputTarget.accept.split(',').map(type => type.trim())
+    }
   }
 }
