@@ -3,6 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["fileInput", "fileList"]
 
+  // TODO: Use a value for the file types, then document it with the `file_field` helper
   static ACCEPTED_FILE_TYPES = ["ofx", "qfx"]
 
   connect() {
