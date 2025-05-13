@@ -199,13 +199,13 @@ module Bulma
 
     test "file_field" do
       result = I18n.stub :translate, "Avatar", [ :avatar, { scope: [ "helpers", "label", :user ], default: "Avatar" } ] do
-        file_field(:user, :avatar, object: @user)
+        file_field(:user, :avatar, object: @user, accept: "image/png,image/jpeg")
       end
 
       expected = <<~HTML
-        <div class="file is-boxed" data-controller="bulma--file-input-display">
+        <div class="file is-boxed" data-controller="bulma--file-input-display" data-bulma--file-input-display-accepted-file-types-value="[&quot;image/png&quot;,&quot;image/jpeg&quot;]">
           <label class="file-label">
-            <input class="file-input" type="file" name="user[avatar]" id="user_avatar"
+            <input accept="image/png,image/jpeg" class="file-input" type="file" name="user[avatar]" id="user_avatar"
                   data-bulma--file-input-display-target="fileInput"
                   data-action="bulma--file-input-display#show" />
             <span class="file-cta">

@@ -129,9 +129,10 @@ module Bulma
     def file_field(object_name, method, options = {})
       append_classes_to_options(options, "file-input")
       append_data_attributes_to_options(options, bulma__file_input_display_target: "fileInput", action: "bulma--file-input-display#show")
+      accepted_file_types = options.fetch(:accept, "").split(",").map(&:strip)
 
       # [File Upload](https://bulma.io/documentation/form/file/)
-      tag.div(class: "file is-boxed", data: { controller: "bulma--file-input-display" }) do
+      tag.div(class: "file is-boxed", data: { controller: "bulma--file-input-display", bulma__file_input_display_accepted_file_types_value: accepted_file_types }) do
         tag.label(class: "file-label") do
           concat super
           concat(tag.span(class: "file-cta") do
