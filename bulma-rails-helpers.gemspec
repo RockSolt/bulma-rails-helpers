@@ -5,18 +5,14 @@ Gem::Specification.new do |spec|
   spec.version     = Bulma::VERSION
   spec.authors     = [ "Todd Kummer" ]
   spec.email       = [ "todd@rockridgesolutions.com" ]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of Bulma::Rails::Helpers."
-  spec.description = "TODO: Description of Bulma::Rails::Helpers."
+  spec.homepage    = "https://github.com/RockSolt/bulma-rails-helpers"
+  spec.summary     = "Build Rails forms with Bulma CSS framework."
+  spec.description = "Override the Rails tag helpers to generate HTML that plays well with the Bulma CSS framework."
   spec.license     = "MIT"
+  spec.required_ruby_version = '>= 3.4.0'
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-
+  spec.metadata["rubygems_mfa_required"] = "true"
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
 
   spec.files = Dir["lib/**/*", "app/**/*", "config/importmap.rb"]
 
