@@ -1,3 +1,7 @@
+[![Gem Version](https://badge.fury.io/rb/bulma-rails-helpers.svg)](https://badge.fury.io/rb/bulma-rails-helpers)
+[![Tests](https://github.com/rocksolt/bulma-rails-helpers/actions/workflows/test.yml/badge.svg)](https://github.com/rocksolt/bulma-rails-helpers/actions/workflows/test.yml)
+[![RuboCop](https://github.com/rocksolt/bulma-rails-helpers/actions/workflows/rubocop.yml/badge.svg)](https://github.com/rocksolt/bulma-rails-helpers/actions/workflows/rubocop.yml)
+
 # Building Rails Forms for Bulma
 
 CSS libraries tend to have opinions about HTML. Remember the first time someone explained CSS to you,
