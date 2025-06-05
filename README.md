@@ -129,7 +129,20 @@ overrides and does the following:
 
 ### JavaScript
 
-There are two Stimulus controllers that implement the JavaScript suggested by the Bulma library:
+The following Stimulus controllers implement the JavaScript suggested by the Bulma library:
+
+**[Dropdown Controller](https://bulma.io/documentation/components/dropdown/#hoverable-or-toggable)**
+
+This controller can be added to a Bulma Dropdown to make it clickable.
+
+```html
+<div class="dropdown" data-controller="bulma--dropdown">
+  <div class="dropdown-trigger">
+    <button class="button" data-action="bulma--dropdown#toggle">...</button>
+  </div>
+  <div class="dropdown-menu" role="menu">...</div>
+</div>
+```
 
 **[File Input Display Controller](https://bulma.io/documentation/form/file/#javascript)**
 
