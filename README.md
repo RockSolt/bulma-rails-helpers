@@ -154,6 +154,36 @@ can be selected and shows the file names.
 There are no helpers for the Bulma Navbar, but this controller can be added to provide the suggested
 toggle.
 
+**[Tabs Controller](https://bulma.io/documentation/components/tabs/)**
+
+This controller can be added to the Tabs component to manage both the tabs and the content. The controller should be added to the enclosing `div`. Each tab should specify it is a target and include the controller action; additionally the id of the element to show/hide should be included as the dataset attribute `tab-content`.
+
+```html
+<div data-controller="bulma--tabs">
+	<div class="tabs">
+		<ul>
+			<li data-bulma--tabs_target="tab" data-tab-content="profile" data-action="click->bulma--tabs#showTabContent" class="is-active">
+				<a>
+					<span>Profile</span>
+				</a>
+			</li>
+			<li data-bulma--tabs_target="tab" data-tab-content="settings" data-action="click->bulma--tabs#showTabContent">
+				<a>
+					<span>Settings</span>
+				</a>
+			</li>
+			<li data-bulma--tabs_target="tab" data-tab-content="notifications" data-action="click->bulma--tabs#showTabContent">
+				<a>
+					<span>Notifications</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div id="profile" class="" data-bulma--tabs_target="content">Profile content goes here</div>
+	<div id="settings" class="hidden" data-bulma--tabs_target="content">Settings content goes here</div>
+	<div id="notifications" class="hidden" data-bulma--tabs_target="content">Notifications content goes here</div>
+</div>
+```
 
 ## Installation
 Add this line to your application's Gemfile:
