@@ -111,7 +111,7 @@ module Bulma
     end
 
     def select(object, method, choices = nil, options = {}, html_options = {}, &block)
-      wrap_with_field_and_label(object, method, options, suppress_label: options.delete(:suppress_label)) do
+      wrap_with_field_and_label(object, method, options, suppress_label: options.delete(:suppress_label), column: options.delete(:column)) do
         wrap_with_control do
           tag.div(class: class_names(:select, is_danger: attribute_has_errors?(options, method))) { super }
         end
