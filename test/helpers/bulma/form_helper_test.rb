@@ -177,6 +177,26 @@ module Bulma
       assert_html_equal expected, result
     end
 
+    test "select field with column" do
+      result = select(:user, :role, [ "Admin", "User" ], { object: @user, column: true })
+
+      expected = <<~HTML
+        <div class="field column">
+          <label class="label" for="user_role">Role</label>
+          <div class="control">
+            <div class="select">
+              <select name="user[role]" id="user_role">
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      HTML
+
+      assert_html_equal expected, result
+    end
+
     test "checkbox" do
       result = I18n.stub :translate, "Admin", [ :admin, { scope: [ "helpers", "label", :user ], default: "Admin" } ] do
         checkbox(:user, :admin, { object: @user }, "1", "0")
