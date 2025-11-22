@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bulma-rails-helpers (0.3.0)
+    bulma-rails-helpers (0.4.0)
       rails (>= 8.0.2)
 
 GEM
