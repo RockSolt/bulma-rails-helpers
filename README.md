@@ -1,6 +1,10 @@
-[![Gem Version](https://badge.fury.io/rb/bulma-rails-helpers.svg)](https://badge.fury.io/rb/bulma-rails-helpers)
-[![Tests](https://github.com/rocksolt/bulma-rails-helpers/actions/workflows/test.yml/badge.svg)](https://github.com/rocksolt/bulma-rails-helpers/actions/workflows/test.yml)
-[![RuboCop](https://github.com/rocksolt/bulma-rails-helpers/actions/workflows/rubocop.yml/badge.svg)](https://github.com/rocksolt/bulma-rails-helpers/actions/workflows/rubocop.yml)
+> [!NOTE]
+> This project has been **archived**. It was a proof-of-concept and showed the benefits of levering Bulma CSS with Phlex components. However, rather than override at such a low level, a custom form builder provides a much more flexible and maintainable solution. 
+>
+> Check out the [bulma-phlex-rails](https://github.com/rocksolt/bulma-phlex-rails) gem for all of this functionality and more, in an easy-to-implement Rails gem.
+
+---
+
 
 # Building Rails Forms for Bulma
 
